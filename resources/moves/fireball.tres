@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://dc8egdhldxkue"]
+
+[ext_resource type="Script" uid="uid://c5b3tfadfsc3f" path="res://scripts/music/note_data.gd" id="1_f58re"]
+[ext_resource type="Script" uid="uid://cydlhiqhxpwvn" path="res://scripts/move.gd" id="1_jcwqo"]
+[ext_resource type="Script" uid="uid://d1mk536vh54ka" path="res://scripts/music/melody.gd" id="2_k1mh1"]
+
+[sub_resource type="Resource" id="Resource_hyfe5"]
+script = ExtResource("1_f58re")
+pitch = 1
+duration = 4
+metadata/_custom_type_script = "uid://c5b3tfadfsc3f"
+
+[sub_resource type="Resource" id="Resource_brcdw"]
+script = ExtResource("1_f58re")
+pitch = 2
+beats = 1.0
+duration = 4
+metadata/_custom_type_script = "uid://c5b3tfadfsc3f"
+
+[sub_resource type="Resource" id="Resource_q4mcy"]
+script = ExtResource("1_f58re")
+pitch = 3
+beats = 2.0
+duration = 4
+metadata/_custom_type_script = "uid://c5b3tfadfsc3f"
+
+[sub_resource type="Resource" id="Resource_sdp73"]
+script = ExtResource("1_f58re")
+pitch = 5
+beats = 3.0
+duration = 4
+metadata/_custom_type_script = "uid://c5b3tfadfsc3f"
+
+[sub_resource type="Resource" id="Resource_bubcw"]
+script = ExtResource("2_k1mh1")
+notes = Array[ExtResource("1_f58re")]([SubResource("Resource_hyfe5"), SubResource("Resource_brcdw"), SubResource("Resource_q4mcy"), SubResource("Resource_sdp73")])
+metadata/_custom_type_script = "uid://d1mk536vh54ka"
+
+[resource]
+script = ExtResource("1_jcwqo")
+move_name = "Fireball"
+melody = SubResource("Resource_bubcw")
+metadata/_custom_type_script = "uid://cydlhiqhxpwvn"

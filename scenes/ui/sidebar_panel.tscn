@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://8lxqkuolv403"]
 
+[ext_resource type="Script" uid="uid://c5wdnm4jdbs1q" path="res://scripts/ui/sidebar_panel.gd" id="1_m4l4x"]
 [ext_resource type="Texture2D" uid="uid://bdr8tqornrhfx" path="res://icon.svg" id="1_uss72"]
 
 [node name="SidebarPanel" type="Panel" unique_id=881017006]
-anchors_preset = -1
 anchor_right = 1.5050001
 anchor_bottom = 0.77300006
 offset_right = 0.23986816
 offset_bottom = 0.095947266
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_m4l4x")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1193885888]
 layout_mode = 1

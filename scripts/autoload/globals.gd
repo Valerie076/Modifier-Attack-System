@@ -6,11 +6,22 @@ enum SpiritCategory {
 	ICE
 }
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+## Pitches on the pentatonic scale.
+enum Pitch {
+	REST = 0,
+	I = 1,
+	II = 2,
+	III = 3,
+	IV = 5,
+	V = 6
+}
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+enum Duration {
+	REST = 0,
+	WHOLE = 1,
+	HALF = 2,
+	TRIPLET = 3,
+	QUARTER = 4,
+	EIGTH = 8,
+	SIXTEENTH = 16
+}
