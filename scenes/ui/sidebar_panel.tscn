@@ -4,12 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://bdr8tqornrhfx" path="res://icon.svg" id="1_uss72"]
 
 [node name="SidebarPanel" type="Panel" unique_id=881017006]
-anchor_right = 1.5050001
-anchor_bottom = 0.77300006
-offset_right = 0.23986816
-offset_bottom = 0.095947266
+custom_minimum_size = Vector2(0, 85)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -756.0
+offset_bottom = -531.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
 script = ExtResource("1_m4l4x")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1193885888]
@@ -19,32 +22,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 12
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=656259849]
 layout_mode = 2
 texture = ExtResource("1_uss72")
 expand_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=251279524]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_top = 50
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer" unique_id=964474251]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=964474251]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TitleText" type="RichTextLabel" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=2011662355]
+[node name="TitleText" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=2011662355]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 130
+theme_override_font_sizes/normal_font_size = 29
 text = "Title"
 
-[node name="DescriptionText" type="RichTextLabel" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1851486809]
+[node name="DescriptionText" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=1851486809]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 70
+theme_override_font_sizes/normal_font_size = 15
 text = "Description"

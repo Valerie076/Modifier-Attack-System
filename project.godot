@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Modifier Attack System"
+run/main_scene="uid://dfv2xqxn85pwe"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Globals="*uid://c0ikltqmwtjla"
-Pitch="*uid://dwgfqsicfqql7"
+SpiritDatabase="*uid://djxfelqyoonsq"
 
 [display]
 
