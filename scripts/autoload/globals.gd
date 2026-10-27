@@ -12,8 +12,8 @@ enum Pitch {
 	I = 1,
 	II = 2,
 	III = 3,
-	IV = 5,
-	V = 6
+	IV = 4,
+	V = 5
 }
 
 enum Duration {
@@ -24,4 +24,12 @@ enum Duration {
 	QUARTER = 4,
 	EIGTH = 8,
 	SIXTEENTH = 16
+}
+
+var Colors: Dictionary[Pitch, Color] = {
+	Pitch.I: Color.GREEN,
+	Pitch.II: Color.RED,
+	Pitch.III: Color.BLUE,
+	Pitch.IV: Color.YELLOW,
+	Pitch.V: Color.MEDIUM_PURPLE
 }

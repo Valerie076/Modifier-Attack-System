@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://gkvndirqpucn"]
+
+[ext_resource type="PackedScene" uid="uid://cnqmfj2v6crpx" path="res://scenes/staff.tscn" id="1_fr7l6"]
+[ext_resource type="Script" uid="uid://b1437serc06n7" path="res://scripts/play_staff.gd" id="2_u5t27"]
+
+[node name="PlayStaff" unique_id=1091799398 instance=ExtResource("1_fr7l6")]
+script = ExtResource("2_u5t27")
+
+[node name="Line2D" type="Line2D" parent="." index="1" unique_id=1820659452]

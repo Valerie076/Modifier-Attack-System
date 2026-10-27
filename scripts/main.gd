@@ -3,6 +3,7 @@ extends Node2D
 const CATEGORY_SIDEBAR_PANEL = preload("res://scenes/ui/category_sidebar_panel.tscn")
 
 @onready var selection_menu: SelectionMenu = $CanvasLayer/SelectionMenu
+@onready var staff: Staff = $Staff
 
 var spirit_categories := Globals.SpiritCategory.keys()
 
@@ -14,9 +15,9 @@ func _ready() -> void:
 	# populate_menu so we get around this by creating a Array[SidebarPanel] and assigning its elements
 	var panels: Array[SidebarPanel] = []
 	panels.assign(category_panels)
-	print(panels[0].description)
-	print(panels)
 	populate_menu(panels)
+	
+	staff.add_melody(SpiritDatabase.spirits[0].moves[0].melody)
 
 ## Return CategorySidebarPanel objects for each spirit category
 func create_category_panels() -> Array[CategorySidebarPanel]:

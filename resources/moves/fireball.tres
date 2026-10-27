@@ -12,22 +12,22 @@ metadata/_custom_type_script = "uid://c5b3tfadfsc3f"
 
 [sub_resource type="Resource" id="Resource_brcdw"]
 script = ExtResource("1_f58re")
+beat = 1.0
 pitch = 2
-beats = 1.0
 duration = 4
 metadata/_custom_type_script = "uid://c5b3tfadfsc3f"
 
 [sub_resource type="Resource" id="Resource_q4mcy"]
 script = ExtResource("1_f58re")
+beat = 2.0
 pitch = 3
-beats = 2.0
 duration = 4
 metadata/_custom_type_script = "uid://c5b3tfadfsc3f"
 
 [sub_resource type="Resource" id="Resource_sdp73"]
 script = ExtResource("1_f58re")
-pitch = 5
-beats = 3.0
+beat = 3.0
+pitch = 4
 duration = 4
 metadata/_custom_type_script = "uid://c5b3tfadfsc3f"
 
