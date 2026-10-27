@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="SpiritCategory" format=3 uid="uid://cv6fkgjial8th"]
+
+[ext_resource type="Script" uid="uid://c5b3tfadfsc3f" path="res://scripts/music/note_data.gd" id="1_pi71o"]
+[ext_resource type="Script" uid="uid://y1oleh2c84ce" path="res://scripts/spirit_category.gd" id="1_r2k5g"]
+[ext_resource type="Script" uid="uid://d1mk536vh54ka" path="res://scripts/music/melody.gd" id="2_6jmuy"]
+
+[sub_resource type="Resource" id="Resource_pi71o"]
+script = ExtResource("1_pi71o")
+pitch = 4
+duration = 4
+metadata/_custom_type_script = "uid://c5b3tfadfsc3f"
+
+[sub_resource type="Resource" id="Resource_6jmuy"]
+script = ExtResource("1_pi71o")
+beat = 1.0
+pitch = 2
+duration = 4
+metadata/_custom_type_script = "uid://c5b3tfadfsc3f"
+
+[sub_resource type="Resource" id="Resource_i6773"]
+script = ExtResource("2_6jmuy")
+notes = Array[ExtResource("1_pi71o")]([SubResource("Resource_pi71o"), SubResource("Resource_6jmuy")])
+metadata/_custom_type_script = "uid://d1mk536vh54ka"
+
+[resource]
+script = ExtResource("1_r2k5g")
+category_name = "Water"
+melody = SubResource("Resource_i6773")
+metadata/_custom_type_script = "uid://y1oleh2c84ce"

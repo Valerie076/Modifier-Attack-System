@@ -6,8 +6,10 @@
 [node name="Note" type="Node2D" unique_id=452459268]
 script = ExtResource("1_1bnk6")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=1829894931]
-scale = Vector2(0.035162777, 0.035162777)
+[node name="SpriteScaler" type="Node2D" parent="." unique_id=1711979587]
+
+[node name="Sprite" type="Sprite2D" parent="SpriteScaler" unique_id=1829894931]
+scale = Vector2(0.032865785, 0.032865785)
 texture = ExtResource("1_t3yvt")
 
 [node name="NoteLength" type="Line2D" parent="." unique_id=1969735535]

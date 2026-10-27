@@ -17,8 +17,12 @@ func update() -> void:
 	
 	for element in elements:
 		v_box_container.add_child(element)
-		print(element.title)
-
+		if is_instance_of(element, CategorySidebarPanel):
+			element.staff.add_melody(element.spirit_category.melody)
+		elif is_instance_of(element, SpiritSidebarPanel):
+			#element.staff.add_melody(element.spirit.melody)
+			pass
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

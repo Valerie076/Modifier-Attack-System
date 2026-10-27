@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="Spirit" format=3 uid="uid://cckkldyt6erga"]
 
 [ext_resource type="Script" uid="uid://cydlhiqhxpwvn" path="res://scripts/move.gd" id="1_1uh2y"]
+[ext_resource type="Resource" uid="uid://cvm3lub5ilegt" path="res://resources/spirit_categories/nature.tres" id="1_bubcw"]
 [ext_resource type="Script" uid="uid://s2y7ofng7ogl" path="res://scripts/spirit.gd" id="1_sm17n"]
 [ext_resource type="Resource" uid="uid://dc8egdhldxkue" path="res://resources/moves/fireball.tres" id="2_q2sa1"]
 
 [resource]
 script = ExtResource("1_sm17n")
 spirit_name = "Mushroom Guy"
+category = ExtResource("1_bubcw")
 moves = Array[ExtResource("1_1uh2y")]([ExtResource("2_q2sa1")])
 metadata/_custom_type_script = "uid://s2y7ofng7ogl"

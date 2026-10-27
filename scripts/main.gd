@@ -12,11 +12,10 @@ const CATEGORY_SIDEBAR_PANEL = preload("res://scenes/ui/category_sidebar_panel.t
 @onready var note_4: AudioStreamPlayer = $Note4
 @onready var note_5: AudioStreamPlayer = $Note5
 
-var spirit_categories := Globals.SpiritCategory.keys()
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SpiritDatabase.load_spirits()
+	SpiritCategoryDatabase.load_spirits()
 	var category_panels: Array[CategorySidebarPanel] = create_category_panels()
 	# Because of the way GDScript handles Array typing, you cannot pass Array[CategorySidebarPanel] into 
 	# populate_menu so we get around this by creating a Array[SidebarPanel] and assigning its elements
@@ -29,10 +28,9 @@ func _ready() -> void:
 ## Return CategorySidebarPanel objects for each spirit category
 func create_category_panels() -> Array[CategorySidebarPanel]:
 	var panels: Array[CategorySidebarPanel] = []
-	for cat in spirit_categories:
-		var panel = CATEGORY_SIDEBAR_PANEL.instantiate()
-		panel.title = str(cat)
-		panel.description = "This is an element!"
+	for cat in SpiritCategoryDatabase.categories:
+		var panel: CategorySidebarPanel = CATEGORY_SIDEBAR_PANEL.instantiate()
+		panel.spirit_category = cat
 		panels.append(panel)
 	
 	return panels

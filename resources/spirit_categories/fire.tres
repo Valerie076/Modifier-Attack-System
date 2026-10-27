@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="SpiritCategory" format=3 uid="uid://i3eoxbkcymvx"]
+
+[ext_resource type="Script" uid="uid://c5b3tfadfsc3f" path="res://scripts/music/note_data.gd" id="1_g5qjd"]
+[ext_resource type="Script" uid="uid://y1oleh2c84ce" path="res://scripts/spirit_category.gd" id="1_j8eb2"]
+[ext_resource type="Script" uid="uid://d1mk536vh54ka" path="res://scripts/music/melody.gd" id="2_63nc2"]
+
+[sub_resource type="Resource" id="Resource_g5qjd"]
+script = ExtResource("1_g5qjd")
+pitch = 1
+duration = 4
+metadata/_custom_type_script = "uid://c5b3tfadfsc3f"
+
+[sub_resource type="Resource" id="Resource_63nc2"]
+script = ExtResource("1_g5qjd")
+beat = 1.0
+pitch = 2
+duration = 4
+metadata/_custom_type_script = "uid://c5b3tfadfsc3f"
+
+[sub_resource type="Resource" id="Resource_g4hkx"]
+script = ExtResource("2_63nc2")
+notes = Array[ExtResource("1_g5qjd")]([SubResource("Resource_g5qjd"), SubResource("Resource_63nc2")])
+metadata/_custom_type_script = "uid://d1mk536vh54ka"
+
+[resource]
+script = ExtResource("1_j8eb2")
+category_name = "Fire"
+melody = SubResource("Resource_g4hkx")
+metadata/_custom_type_script = "uid://y1oleh2c84ce"

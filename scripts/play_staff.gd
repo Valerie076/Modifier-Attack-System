@@ -3,7 +3,7 @@ extends Staff
 
 @onready var playhead: Line2D = $Playhead
 
-const BPM = 250.0
+const BPM = 300.0
 
 func _ready() -> void:
 	playhead.position.x = -width / 2

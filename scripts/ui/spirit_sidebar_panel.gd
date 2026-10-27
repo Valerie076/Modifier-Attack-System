@@ -1,12 +1,12 @@
 class_name SpiritSidebarPanel
 extends SidebarPanel
 
+@export var spirit: Spirit
+
+@onready var _title_text: RichTextLabel = $HBoxContainer/VBoxContainer/TitleText
+@onready var _description_text: RichTextLabel = $HBoxContainer/VBoxContainer/DescriptionText
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	_title_text.text = spirit.spirit_name
+	_description_text.text = "desc"

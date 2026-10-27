@@ -1,11 +1,5 @@
 extends Node
 
-enum SpiritCategory {
-	FIRE,
-	EARTH,
-	ICE
-}
-
 ## Pitches on the pentatonic scale.
 enum Pitch {
 	REST = 0,

@@ -13,7 +13,7 @@ func load_spirits() -> void:
 			spirits.append(spirit)
 
 ## Return an array of spirits matching the specified category.
-func get_spirits_by_category(category: Globals.SpiritCategory) -> Array[Spirit]:
+func get_spirits_by_category(category: SpiritCategory) -> Array[Spirit]:
 	var cat_spirits: Array[Spirit] = []
 	for spirit in spirits:
 		if spirit.category == category:

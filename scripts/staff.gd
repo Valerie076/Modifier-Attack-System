@@ -15,6 +15,7 @@ const NOTE = preload("res://scenes/note.tscn")
 
 @export var line_spacing: float = 24.0
 @export var width: float = 600.0
+@export var line_width: float = 2.0
 
 func _ready() -> void:
 	draw_lines()
@@ -27,16 +28,16 @@ func draw_lines() -> void:
 	for i in range(5):
 		var y: float = i * line_spacing
 		
-		h_lines[i].width = 2.0
+		h_lines[i].width = line_width
 		
 		h_lines[i].add_point(Vector2(left, y))
 		h_lines[i].add_point(Vector2(-left, y))
 	
-	left_line.width = 2.0
+	left_line.width = line_width
 	left_line.add_point(Vector2(-width / 2, 0))
 	left_line.add_point(Vector2(-width / 2, 4 * line_spacing))
 	
-	right_line.width = 2.0
+	right_line.width = line_width
 	right_line.add_point(Vector2(width / 2, 0))
 	right_line.add_point(Vector2(width / 2, 4 * line_spacing))
 
@@ -55,6 +56,10 @@ func add_note(note_data: NoteData) -> void:
 	note.position.y = (5 - note_data.pitch) * line_spacing
 	
 	notes.add_child(note)
+	
+	note.sprite_scaler.scale.x = line_width / 2.0
+	note.sprite_scaler.scale.y = line_width / 2.0
+	note.note_length.width = line_width * 5.0
 	
 	# Color
 	note.sprite.modulate = Globals.Colors[note_data.pitch]

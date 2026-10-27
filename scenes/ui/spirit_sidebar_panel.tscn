@@ -6,3 +6,4 @@
 [node name="SpiritSidebarPanel" unique_id=881017006 instance=ExtResource("1_q4mcy")]
 anchors_preset = -1
 script = ExtResource("1_brcdw")
+spirit = null

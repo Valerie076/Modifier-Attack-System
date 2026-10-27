@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 
 Globals="*uid://c0ikltqmwtjla"
 SpiritDatabase="*uid://djxfelqyoonsq"
+SpiritCategoryDatabase="*uid://b5e4gbsr0m5yu"
 
 [display]
 
