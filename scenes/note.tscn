@@ -3,10 +3,6 @@
 [ext_resource type="Script" uid="uid://dya2itilri84y" path="res://scripts/note.gd" id="1_1bnk6"]
 [ext_resource type="Texture2D" uid="uid://dj6cnj65g3ibt" path="res://assets/note.png" id="1_t3yvt"]
 
-[sub_resource type="Curve" id="Curve_1bnk6"]
-_data = [Vector2(1e-05, 0.9887641), 98876.414, -0.6705891, 1, 1, Vector2(1, 0.31818175), -0.6705891, 0.0, 1, 0]
-point_count = 2
-
 [node name="Note" type="Node2D" unique_id=452459268]
 script = ExtResource("1_1bnk6")
 
@@ -16,4 +12,3 @@ texture = ExtResource("1_t3yvt")
 
 [node name="NoteLength" type="Line2D" parent="." unique_id=1969735535]
 scale = Vector2(1.0039244, 1)
-width_curve = SubResource("Curve_1bnk6")

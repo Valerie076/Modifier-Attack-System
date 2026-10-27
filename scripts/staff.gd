@@ -60,13 +60,17 @@ func add_note(note_data: NoteData) -> void:
 	note.sprite.modulate = Globals.Colors[note_data.pitch]
 	
 	# Trail
-	var gradient = Gradient.new()
-	gradient.remove_point(0)
-	gradient.remove_point(1)
-	gradient.add_point(0.0, Globals.Colors[note_data.pitch])
-	gradient.add_point(1.0, Color(1.0, 1.0, 1.0, 0.533))
-	note.note_length.gradient = gradient
+	#var gradient = Gradient.new()
+	#gradient.remove_point(0)
+	#gradient.remove_point(1)
+	#gradient.add_point(0.0, Globals.Colors[note_data.pitch])
+	#gradient.add_point(1.0, Color(1.0, 1.0, 1.0, 0.533))
+	#note.note_length.gradient = gradient
+	note.note_length.default_color = Globals.Colors[note_data.pitch]
 	
 	note.note_length.add_point(Vector2.ZERO)
 	note.note_length.add_point(Vector2((1. / note_data.duration) * width, 0))
-	
+
+func clear_notes() -> void:
+	for note in notes.get_children():
+		note.queue_free()

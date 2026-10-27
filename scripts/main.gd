@@ -4,6 +4,13 @@ const CATEGORY_SIDEBAR_PANEL = preload("res://scenes/ui/category_sidebar_panel.t
 
 @onready var selection_menu: SelectionMenu = $CanvasLayer/SelectionMenu
 @onready var staff: Staff = $Staff
+@onready var play_staff: PlayStaff = $PlayStaff
+
+@onready var note_1: AudioStreamPlayer = $Note1
+@onready var note_2: AudioStreamPlayer = $Note2
+@onready var note_3: AudioStreamPlayer = $Note3
+@onready var note_4: AudioStreamPlayer = $Note4
+@onready var note_5: AudioStreamPlayer = $Note5
 
 var spirit_categories := Globals.SpiritCategory.keys()
 
@@ -35,5 +42,25 @@ func populate_menu(panels: Array[SidebarPanel]) -> void:
 	selection_menu.update()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _physics_process(delta: float) -> void:
+	var note_data: NoteData = NoteData.new()
+	# Crazy math
+	note_data.beat = 4 * (play_staff.playhead.position.x / play_staff.width) + 2.0
+	note_data.duration = Globals.Duration.SIXTEENTH
+	if Input.is_action_just_pressed("note_one"):
+		note_data.pitch = Globals.Pitch.I
+		note_1.play()
+	if Input.is_action_just_pressed("note_two"):
+		note_data.pitch = Globals.Pitch.II
+		note_2.play()
+	if Input.is_action_just_pressed("note_three"):
+		note_data.pitch = Globals.Pitch.III
+		note_3.play()
+	if Input.is_action_just_pressed("note_four"):
+		note_data.pitch = Globals.Pitch.IV
+		note_4.play()
+	if Input.is_action_just_pressed("note_five"):
+		note_data.pitch = Globals.Pitch.V
+		note_5.play()
+	
+	play_staff.add_note(note_data)

@@ -1,12 +1,18 @@
 class_name PlayStaff
 extends Staff
 
+@onready var playhead: Line2D = $Playhead
 
-# Called when the node enters the scene tree for the first time.
+const BPM = 250.0
+
 func _ready() -> void:
-	pass # Replace with function body.
+	playhead.position.x = -width / 2
+	playhead.position.y = line_spacing * 2
+	draw_lines()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	playhead.position.x += BPM * delta
+	
+	if playhead.position.x >= width / 2:
+		playhead.position.x = -width / 2
+		clear_notes()
