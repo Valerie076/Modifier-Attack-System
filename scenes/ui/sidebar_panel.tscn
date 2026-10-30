@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://8lxqkuolv403"]
+
+[ext_resource type="Script" uid="uid://c5wdnm4jdbs1q" path="res://scripts/ui/sidebar_panel.gd" id="1_m4l4x"]
+[ext_resource type="Texture2D" uid="uid://bdr8tqornrhfx" path="res://assets/icon.svg" id="1_uss72"]
+[ext_resource type="PackedScene" uid="uid://cnqmfj2v6crpx" path="res://scenes/staff.tscn" id="3_8p410"]
+
+[node name="SidebarPanel" type="Panel" unique_id=881017006]
+custom_minimum_size = Vector2(0, 85)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -756.0
+offset_bottom = -531.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_m4l4x")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1193885888]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=656259849]
+layout_mode = 2
+texture = ExtResource("1_uss72")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=964474251]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TitleText" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=2011662355]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 26
+text = "Title"
+
+[node name="DescriptionText" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=1851486809]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 15
+text = "Description"
+
+[node name="Staff" parent="HBoxContainer/VBoxContainer" unique_id=1091799398 instance=ExtResource("3_8p410")]
+position = Vector2(101, 37)
+line_spacing = 11.0
+width = 220.0
+line_width = 1.0

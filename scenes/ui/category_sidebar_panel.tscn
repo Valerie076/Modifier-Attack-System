@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cns42vde5ixug"]
+
+[ext_resource type="PackedScene" uid="uid://8lxqkuolv403" path="res://scenes/ui/sidebar_panel.tscn" id="1_okdge"]
+[ext_resource type="Script" uid="uid://dvlkumlh5yyay" path="res://scripts/ui/category_sidebar_panel.gd" id="2_hoxb5"]
+
+[node name="CategorySidebarPanel" unique_id=881017006 instance=ExtResource("1_okdge")]
+anchors_preset = -1
+script = ExtResource("2_hoxb5")
+spirit_category = null

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cnqmfj2v6crpx"]
+
+[ext_resource type="Script" uid="uid://4hyuldt8nbgk" path="res://scripts/staff.gd" id="1_3gxsk"]
+
+[node name="Staff" type="Node2D" unique_id=1091799398]
+script = ExtResource("1_3gxsk")
+
+[node name="Lines" type="Node2D" parent="." unique_id=99979162]
+
+[node name="FLine" type="Line2D" parent="Lines" unique_id=1132426874]
+
+[node name="DLine" type="Line2D" parent="Lines" unique_id=417481296]
+
+[node name="BLine" type="Line2D" parent="Lines" unique_id=1252988932]
+
+[node name="GLine" type="Line2D" parent="Lines" unique_id=1685475367]
+
+[node name="ELine" type="Line2D" parent="Lines" unique_id=278515181]
+
+[node name="LeftLine" type="Line2D" parent="Lines" unique_id=652328088]
+
+[node name="RightLine" type="Line2D" parent="Lines" unique_id=2113983068]
+
+[node name="Notes" type="Node2D" parent="." unique_id=1421555424]
