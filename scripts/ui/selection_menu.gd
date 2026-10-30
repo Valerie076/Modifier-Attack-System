@@ -1,7 +1,8 @@
 class_name SelectionMenu
 extends Control
 
-@onready var v_box_container: VBoxContainer = $VBoxContainer
+@onready var panel_container: VBoxContainer = $VBoxContainer/PanelContainer
+@onready var header: RichTextLabel = $VBoxContainer/Header
 
 @export var elements: Array[SidebarPanel] = []
 
@@ -11,18 +12,15 @@ func _ready() -> void:
 
 ## Update the elements in the sidebar.
 func update() -> void:
-	for n in v_box_container.get_children():
-		v_box_container.remove_child(n)
+	for n in panel_container.get_children():
+		panel_container.remove_child(n)
 		n.queue_free()
 	
 	for element in elements:
-		v_box_container.add_child(element)
+		panel_container.add_child(element)
 		if is_instance_of(element, CategorySidebarPanel):
-			element.staff.add_melody(element.spirit_category.melody)
+			element.staff.melody = element.spirit_category.melody
 		elif is_instance_of(element, SpiritSidebarPanel):
-			#element.staff.add_melody(element.spirit.melody)
-			pass
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+			element.staff.add_melody(element.spirit.melody)
+		elif is_instance_of(element, SpiritMoveSidebarPanel):
+			element.staff.melody = element.move.melody

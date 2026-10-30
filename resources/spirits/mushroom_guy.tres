@@ -3,11 +3,33 @@
 [ext_resource type="Script" uid="uid://cydlhiqhxpwvn" path="res://scripts/move.gd" id="1_1uh2y"]
 [ext_resource type="Resource" uid="uid://cvm3lub5ilegt" path="res://resources/spirit_categories/nature.tres" id="1_bubcw"]
 [ext_resource type="Script" uid="uid://s2y7ofng7ogl" path="res://scripts/spirit.gd" id="1_sm17n"]
+[ext_resource type="Script" uid="uid://c5b3tfadfsc3f" path="res://scripts/music/note_data.gd" id="2_kp2jd"]
 [ext_resource type="Resource" uid="uid://dc8egdhldxkue" path="res://resources/moves/fireball.tres" id="2_q2sa1"]
+[ext_resource type="Script" uid="uid://d1mk536vh54ka" path="res://scripts/music/melody.gd" id="3_83yv7"]
+
+[sub_resource type="Resource" id="Resource_k1mh1"]
+script = ExtResource("2_kp2jd")
+beat = 2.0
+pitch = 1
+duration = 4
+metadata/_custom_type_script = "uid://c5b3tfadfsc3f"
+
+[sub_resource type="Resource" id="Resource_8xkrv"]
+script = ExtResource("2_kp2jd")
+beat = 3.0
+pitch = 2
+duration = 4
+metadata/_custom_type_script = "uid://c5b3tfadfsc3f"
+
+[sub_resource type="Resource" id="Resource_f58re"]
+script = ExtResource("3_83yv7")
+notes = Array[ExtResource("2_kp2jd")]([SubResource("Resource_k1mh1"), SubResource("Resource_8xkrv")])
+metadata/_custom_type_script = "uid://d1mk536vh54ka"
 
 [resource]
 script = ExtResource("1_sm17n")
 spirit_name = "Mushroom Guy"
 category = ExtResource("1_bubcw")
+melody = SubResource("Resource_f58re")
 moves = Array[ExtResource("1_1uh2y")]([ExtResource("2_q2sa1")])
 metadata/_custom_type_script = "uid://s2y7ofng7ogl"

@@ -5,6 +5,7 @@ const NOTE = preload("res://scenes/note.tscn")
 
 @onready var notes: Node2D = $Notes
 
+@onready var lines: Node2D = $Lines
 @onready var f_line: Line2D = $Lines/FLine
 @onready var d_line: Line2D = $Lines/DLine
 @onready var b_line: Line2D = $Lines/BLine
@@ -16,6 +17,14 @@ const NOTE = preload("res://scenes/note.tscn")
 @export var line_spacing: float = 24.0
 @export var width: float = 600.0
 @export var line_width: float = 2.0
+## Whether or not to draw thinner lines at each fourth.
+@export var draw_quarters: bool = true
+@export var melody: Melody = Melody.new():
+	set(new_melody):
+		melody = new_melody
+		if new_melody.notes:
+			for note_data in new_melody.notes:
+				add_note(note_data)
 
 func _ready() -> void:
 	draw_lines()
@@ -40,10 +49,21 @@ func draw_lines() -> void:
 	right_line.width = line_width
 	right_line.add_point(Vector2(width / 2, 0))
 	right_line.add_point(Vector2(width / 2, 4 * line_spacing))
+	
+	if draw_quarters:
+		for i in range(1, 4):
+			var line: Line2D = Line2D.new()
+			
+			#if line_width <= 1.0:
+			line.default_color = Color(0.486, 0.486, 0.486, 1.0)
+			line.width = line_width / 2.0 if line_width > 1.0 else line_width
+			line.add_point(Vector2(-width / 2 + (width / 4) * i, 0))
+			line.add_point(Vector2(-width / 2 + (width / 4) * i, 4 * line_spacing))
+			
+			lines.add_child(line)
 
-func add_melody(melody: Melody) -> void:
-	for note_data in melody.notes:
-		add_note(note_data)
+func add_melody(m: Melody) -> void:
+	self.melody = m
 
 func add_note(note_data: NoteData) -> void:
 	if note_data.pitch == Globals.Duration.REST or note_data.pitch == Globals.Pitch.REST:
@@ -79,3 +99,4 @@ func add_note(note_data: NoteData) -> void:
 func clear_notes() -> void:
 	for note in notes.get_children():
 		note.queue_free()
+	melody = Melody.new()

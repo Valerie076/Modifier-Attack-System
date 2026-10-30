@@ -2,11 +2,48 @@
 
 [ext_resource type="PackedScene" uid="uid://cnqmfj2v6crpx" path="res://scenes/staff.tscn" id="1_fr7l6"]
 [ext_resource type="Script" uid="uid://b1437serc06n7" path="res://scripts/play_staff.gd" id="2_u5t27"]
+[ext_resource type="Texture2D" uid="uid://d4l7g3eu1r41d" path="res://assets/buttons/A.png" id="3_uqtsp"]
+[ext_resource type="Texture2D" uid="uid://uln2m6qb4nth" path="res://assets/buttons/B.png" id="4_xc02m"]
+[ext_resource type="Texture2D" uid="uid://dc0tmh3tais34" path="res://assets/buttons/X.png" id="5_snbx6"]
+[ext_resource type="Texture2D" uid="uid://c7kgd8p0ib7uh" path="res://assets/buttons/Y.png" id="6_l4qvn"]
+[ext_resource type="Texture2D" uid="uid://c22owcp3chdaf" path="res://assets/buttons/RB.png" id="7_8fndg"]
 
 [node name="PlayStaff" unique_id=1091799398 instance=ExtResource("1_fr7l6")]
 script = ExtResource("2_u5t27")
 
-[node name="Playhead" type="Line2D" parent="." index="2" unique_id=1820659452]
+[node name="Sprites" type="Node2D" parent="." index="0" unique_id=738944600]
+
+[node name="A" type="Sprite2D" parent="Sprites" index="0" unique_id=2002737306]
+position = Vector2(-316, 95)
+scale = Vector2(0.021527786, 0.021527786)
+texture = ExtResource("3_uqtsp")
+
+[node name="B" type="Sprite2D" parent="Sprites" index="1" unique_id=1138782946]
+position = Vector2(-316, 70.99999)
+scale = Vector2(0.021527786, 0.021527786)
+texture = ExtResource("4_xc02m")
+
+[node name="X" type="Sprite2D" parent="Sprites" index="2" unique_id=552900327]
+position = Vector2(-316, 46.999992)
+scale = Vector2(0.021527786, 0.021527786)
+texture = ExtResource("5_snbx6")
+
+[node name="Y" type="Sprite2D" parent="Sprites" index="3" unique_id=1853104254]
+position = Vector2(-316, 22.999992)
+scale = Vector2(0.021527786, 0.021527786)
+texture = ExtResource("6_l4qvn")
+
+[node name="RB" type="Sprite2D" parent="Sprites" index="4" unique_id=1125216950]
+position = Vector2(-316, -1.0000067)
+scale = Vector2(0.021527786, 0.021527786)
+texture = ExtResource("7_8fndg")
+
+[node name="Playhead" type="Line2D" parent="." index="3" unique_id=1820659452]
 points = PackedVector2Array(0, -60, 0, 60)
 width = 5.0
 default_color = Color(0.87734634, 3.8745256e-06, 1.2513996e-06, 1)
+
+[node name="PhantomPlayhead" type="Line2D" parent="." index="4" unique_id=718859825]
+points = PackedVector2Array(0, -60, 0, 60)
+width = 5.0
+default_color = Color(0.88, 0, 0, 0)

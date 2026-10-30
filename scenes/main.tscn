@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bkonyxv7uyrm7" path="res://assets/music/e.wav" id="7_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://cyyr7k7gbea5k" path="res://assets/music/g.wav" id="8_eb6dy"]
 [ext_resource type="AudioStream" uid="uid://c5h5pvwd7irwb" path="res://assets/music/a.wav" id="9_trceg"]
+[ext_resource type="PackedScene" uid="uid://cgh7ervmb6518" path="res://scenes/attack_manager.tscn" id="10_choun"]
 
 [node name="Main" type="Node2D" unique_id=112639547]
 script = ExtResource("1_0wfyh")
@@ -18,29 +19,44 @@ script = ExtResource("1_0wfyh")
 [node name="SelectionMenu" parent="CanvasLayer" unique_id=845248835 instance=ExtResource("1_o5qli")]
 size_flags_vertical = 1
 
+[node name="DamageLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=110203603]
+offset_left = 741.0
+offset_top = 12.0
+offset_right = 1140.0
+offset_bottom = 59.0
+theme_override_font_sizes/normal_font_size = 31
+text = "DAMAGE: "
+scroll_active = false
+
+[node name="PlayStaff" parent="." unique_id=1189333192 instance=ExtResource("4_jyhfs")]
+position = Vector2(737, 520)
+
 [node name="Staff" parent="." unique_id=1091799398 instance=ExtResource("3_sugp2")]
 visible = false
 position = Vector2(674, 124)
 
-[node name="PlayStaff" parent="." unique_id=1189333192 instance=ExtResource("4_jyhfs")]
-position = Vector2(661, 481)
+[node name="NotesSFX" type="Node2D" parent="." unique_id=1530930909]
 
-[node name="Note1" type="AudioStreamPlayer" parent="." unique_id=2070202472]
+[node name="Note1" type="AudioStreamPlayer" parent="NotesSFX" unique_id=2070202472]
 stream = ExtResource("5_85g3d")
 volume_db = -16.0
 
-[node name="Note2" type="AudioStreamPlayer" parent="." unique_id=1795071862]
+[node name="Note2" type="AudioStreamPlayer" parent="NotesSFX" unique_id=1795071862]
 stream = ExtResource("6_choun")
 volume_db = -16.0
 
-[node name="Note3" type="AudioStreamPlayer" parent="." unique_id=569702865]
+[node name="Note3" type="AudioStreamPlayer" parent="NotesSFX" unique_id=569702865]
 stream = ExtResource("7_ya4ey")
 volume_db = -16.0
 
-[node name="Note4" type="AudioStreamPlayer" parent="." unique_id=122093136]
+[node name="Note4" type="AudioStreamPlayer" parent="NotesSFX" unique_id=122093136]
 stream = ExtResource("8_eb6dy")
 volume_db = -16.0
 
-[node name="Note5" type="AudioStreamPlayer" parent="." unique_id=1759994676]
+[node name="Note5" type="AudioStreamPlayer" parent="NotesSFX" unique_id=1759994676]
 stream = ExtResource("9_trceg")
 volume_db = -16.0
+
+[node name="AttackManager" parent="." unique_id=122140897 node_paths=PackedStringArray("play_staff", "selection_menu") instance=ExtResource("10_choun")]
+play_staff = NodePath("../PlayStaff")
+selection_menu = NodePath("../CanvasLayer/SelectionMenu")

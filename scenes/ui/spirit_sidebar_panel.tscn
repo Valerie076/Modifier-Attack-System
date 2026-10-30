@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bqbokvw3x6qoh"]
 
-[ext_resource type="Script" uid="uid://cx6ehbu43vwse" path="res://scripts/ui/spirit_sidebar_panel.gd" id="1_brcdw"]
 [ext_resource type="PackedScene" uid="uid://8lxqkuolv403" path="res://scenes/ui/sidebar_panel.tscn" id="1_q4mcy"]
+[ext_resource type="Script" uid="uid://cx6ehbu43vwse" path="res://scripts/ui/spirit_sidebar_panel.gd" id="2_brcdw"]
 
 [node name="SpiritSidebarPanel" unique_id=881017006 instance=ExtResource("1_q4mcy")]
 anchors_preset = -1
-script = ExtResource("1_brcdw")
+script = ExtResource("2_brcdw")
 spirit = null

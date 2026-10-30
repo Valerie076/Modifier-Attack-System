@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dgm8o75noblf"]
+
+[ext_resource type="PackedScene" uid="uid://8lxqkuolv403" path="res://scenes/ui/sidebar_panel.tscn" id="1_l1nvy"]
+[ext_resource type="Script" uid="uid://ciuh0s632awlk" path="res://scripts/ui/spirit_move_sidebar_panel.gd" id="2_l1nvy"]
+
+[node name="SpiritMoveSidebarPanel" unique_id=881017006 instance=ExtResource("1_l1nvy")]
+anchors_preset = -1
+script = ExtResource("2_l1nvy")
+move = null
